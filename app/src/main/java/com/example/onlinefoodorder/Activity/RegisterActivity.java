@@ -43,38 +43,34 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
     @Override
     public void onClick(View v) {
-            Retrofit retrofit = new Retrofit.Builder().
-                    baseUrl("http://10.0.2.2:3000/").
-                    addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit retrofit=new Retrofit.Builder().baseUrl("http://10.0.2.2:3000/").addConverterFactory(GsonConverterFactory.create()).build();
+        UserAPI userAPI=retrofit.create(UserAPI.class);
+        Call<UserResponse> call=userAPI.registerUser(new User(edtFirstName.getText().toString(),edtLastName.getText().toString(),edtUsername.getText().toString(),edtEmail.getText().toString(), edtPassword.getText().toString()));
 
-            UserAPI userAPI = retrofit.create(UserAPI.class);
+        call.enqueue(new Callback<UserResponse>() {
 
-
-            Call<UserResponse> call = userAPI.registerUser(new User(edtFirstName.getText().toString(), edtLastName.getText().toString(),
-                    edtUsername.getText().toString(), edtEmail.getText().toString(),
-                    edtPassword.getText().toString()));
-
-            call.enqueue(new Callback<UserResponse>() {
-                @Override
-                public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-
-                    Toast.makeText(RegisterActivity.this, "Successfully registered!", Toast.LENGTH_SHORT).show();
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(RegisterActivity.this,"code"+response.code(), Toast.LENGTH_SHORT).show();
                 }
-
-                @Override
-                public void onFailure(Call<UserResponse> call, Throwable t) {
-                    Toast.makeText(RegisterActivity.this,"Error"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-
-      /*  Spinner dropdown = findViewById(R.id.spinner1);
-        String[] items = new String[]{"user", "admin"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);*/
+                Toast.makeText(RegisterActivity.this, "Register Successfull", Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+                Toast.makeText(RegisterActivity.this, "Error"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
+//       Spinner dropdown = findViewById(R.id.spinner1);
+//        String[] items = new String[]{"user", "admin"};
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+//        dropdown.setAdapter(adapter);
 
 
-        }
+
+
     }
+}
 

@@ -15,19 +15,19 @@ public class User {
         this.password = password;
     }
 
-    public String getFirstname() {
+    public String getfirstname() {
         return firstname;
     }
 
-    public void setFirstname(String firstname) {
+    public void setfirstname(String firstname) {
         this.firstname = firstname;
     }
 
-    public String getLastname() {
+    public String getlastname() {
         return lastname;
     }
 
-    public void setLastname(String lastname) {
+    public void setlastname(String lastname) {
         this.lastname = lastname;
     }
 

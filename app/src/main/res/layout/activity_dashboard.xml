@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         >
 
@@ -86,15 +86,15 @@
                      android:layout_height="100dp"
                      android:layout_gravity="center"
                      android:layout_marginTop="12dp"
-                     android:src="@drawable/icon2"/>
+                     android:src="@drawable/icon1"/>
 
                  <TextView
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="Food"
+                     android:text="Order Here"
                      android:layout_gravity="center"
                      android:textSize="25sp"
-                     android:textColor="@color/black"
+                     android:textColor="@color/white"
                      android:layout_marginTop="20dp"/>
              </LinearLayout>
 
@@ -120,15 +120,15 @@
                      android:layout_height="100dp"
                      android:layout_gravity="center"
                      android:layout_marginTop="12dp"
-                     android:src="@drawable/icon2"/>
+                     android:src="@drawable/money"/>
 
                  <TextView
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="Food"
+                     android:text="Order Here"
                      android:layout_gravity="center"
                      android:textSize="25sp"
-                     android:textColor="@color/black"
+                     android:textColor="@color/yellow"
                      android:layout_marginTop="20dp"/>
              </LinearLayout>
 
@@ -154,15 +154,15 @@
                      android:layout_height="100dp"
                      android:layout_gravity="center"
                      android:layout_marginTop="12dp"
-                     android:src="@drawable/icon2"/>
+                     android:src="@drawable/icon4"/>
 
                  <TextView
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="Food"
+                     android:text="Order Here"
                      android:layout_gravity="center"
                      android:textSize="25sp"
-                     android:textColor="@color/black"
+                     android:textColor="@color/pinky"
                      android:layout_marginTop="20dp"/>
              </LinearLayout>
 
@@ -187,12 +187,12 @@
                      android:layout_height="100dp"
                      android:layout_gravity="center"
                      android:layout_marginTop="12dp"
-                     android:src="@drawable/icon2"/>
+                     android:src="@drawable/icon8"/>
 
                  <TextView
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="Food"
+                     android:text="Order Here"
                      android:layout_gravity="center"
                      android:textSize="25sp"
                      android:textColor="@color/black"
@@ -221,23 +221,36 @@
                      android:layout_height="100dp"
                      android:layout_gravity="center"
                      android:layout_marginTop="12dp"
-                     android:src="@drawable/icon2"/>
+                     android:src="@drawable/icon11"/>
 
                  <TextView
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="Food"
+                     android:text="Order Here"
                      android:layout_gravity="center"
                      android:textSize="25sp"
-                     android:textColor="@color/black"
+                     android:textColor="@color/white"
                      android:layout_marginTop="20dp"/>
              </LinearLayout>
 
          </androidx.cardview.widget.CardView>
 
      </GridLayout>
+        <Button
+            android:id="@+id/btnAddFooditems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Food Items"
+            android:textSize="20sp"
+            android:layout_margin="20dp"/>
 
-
+        <Button
+            android:id="@+id/btnViewFooditems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Food Items"
+            android:textSize="20sp"
+            android:layout_margin="20dp"/>
 </LinearLayout>
 
 </ScrollView>

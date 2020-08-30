@@ -1,14 +1,10 @@
-package com.example.onlinefoodorder.Activity;
+package com.example.wearapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Button;
 
-import com.example.onlinefoodorder.R;
-
-public class   Dashboard extends AppCompatActivity {
-    Button btnAddFooitems, btnViewFooditems;
+public class DashboardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
