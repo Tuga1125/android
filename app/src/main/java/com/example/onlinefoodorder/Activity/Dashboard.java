@@ -8,7 +8,7 @@ import android.widget.Button;
 import com.example.onlinefoodorder.R;
 
 public class   Dashboard extends AppCompatActivity {
-    Button btnAddFooitems, btnViewFooditems;
+    Button btnAddFooditems, btnViewFooditems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

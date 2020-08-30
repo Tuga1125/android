@@ -81,11 +81,13 @@ public class LoginScreenActivity extends AppCompatActivity {
                     return;
                 }
                 startActivity(new Intent(LoginScreenActivity.this, Dashboard.class));
+                displayNotificationSuccess();
             }
 
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
                Toast.makeText(LoginScreenActivity.this,"Error"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+               displayNotificationUnSuccess();
             }
         });
     }
