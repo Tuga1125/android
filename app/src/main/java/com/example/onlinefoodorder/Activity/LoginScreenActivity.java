@@ -17,6 +17,7 @@ import com.example.onlinefoodorder.API.UserAPI;
 import com.example.onlinefoodorder.Channel.CreateChannel;
 import com.example.onlinefoodorder.R;
 import com.example.onlinefoodorder.Response.UserResponse;
+import com.example.onlinefoodorder.URL.URL;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -80,6 +81,8 @@ public class LoginScreenActivity extends AppCompatActivity {
                     Toast.makeText(LoginScreenActivity.this, "Either username or password is incorrect", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                URL.token+=response.body().getToken();
                 startActivity(new Intent(LoginScreenActivity.this, Dashboard.class));
                 displayNotificationSuccess();
             }
