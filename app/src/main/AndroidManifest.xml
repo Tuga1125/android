@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.FoodItemsActivity"></activity>
+        <activity android:name=".Activity.ViewFoodItemsActivity"></activity>
+        <activity android:name=".Activity.OrderItemActivity" />
+        <activity android:name=".Activity.FoodItemsActivity" />
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Activity.Dashboard" />
         <activity android:name=".Activity.LoginScreenActivity" />

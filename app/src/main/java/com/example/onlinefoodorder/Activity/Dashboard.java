@@ -26,5 +26,12 @@ public class   Dashboard extends AppCompatActivity {
                 startActivity(new Intent(Dashboard.this, FoodItemsActivity.class));
             }
         });
+
+        btnViewFooditems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, ViewFoodItemsActivity.class));
+            }
+        });
     }
 }

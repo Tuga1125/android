@@ -14,6 +14,7 @@ import com.example.onlinefoodorder.API.UserAPI;
 import com.example.onlinefoodorder.Model.User;
 import com.example.onlinefoodorder.R;
 import com.example.onlinefoodorder.Response.UserResponse;
+import com.example.onlinefoodorder.URL.URL;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,8 +44,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
     @Override
     public void onClick(View v) {
-        Retrofit retrofit=new Retrofit.Builder().baseUrl("http://10.0.2.2:3000/").addConverterFactory(GsonConverterFactory.create()).build();
-        UserAPI userAPI=retrofit.create(UserAPI.class);
+
+//        Retrofit retrofit=new Retrofit.Builder().baseUrl("http://10.0.2.2:3000/").addConverterFactory(GsonConverterFactory.create()).build();
+//        Retrofit retrofit = URL.getInstance();
+        UserAPI userAPI= URL.getInstance().create(UserAPI.class);
+
         Call<UserResponse> call=userAPI.registerUser(new User(edtFirstName.getText().toString(),edtLastName.getText().toString(),edtUsername.getText().toString(),edtEmail.getText().toString(), edtPassword.getText().toString()));
 
         call.enqueue(new Callback<UserResponse>() {

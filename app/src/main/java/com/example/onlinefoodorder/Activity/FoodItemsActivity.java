@@ -41,10 +41,11 @@ public class FoodItemsActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.0.2.2:3000/")
-                        .addConverterFactory(GsonConverterFactory.create()).build();
+//                Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.0.2.2:3000/")
+//                        .addConverterFactory(GsonConverterFactory.create()).build();
+//               Retrofit retrofit = URL.getInstance();
 
-                ItemAPI itemAPI = retrofit.create(ItemAPI.class);
+                ItemAPI itemAPI = URL.getInstance().create(ItemAPI.class);
 
                 Call<Void> call = itemAPI.add_Item(URL.token,etFood.getText().toString(),etDesc.getText().toString(),etQuantity.getText().toString(),etPrice.getText().toString());
 

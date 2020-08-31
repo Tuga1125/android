@@ -65,12 +65,14 @@ public class LoginScreenActivity extends AppCompatActivity {
 
     }
     private void login(){
-        Retrofit retrofit = new Retrofit.Builder().
-                baseUrl("http://10.0.2.2:3000/").
-                addConverterFactory(GsonConverterFactory.create()).
-                build();
+//        Retrofit retrofit = new Retrofit.Builder().
+//                baseUrl("http://10.0.2.2:3000/").
+//                addConverterFactory(GsonConverterFactory.create()).
+//                build()
+//        Retrofit retrofit = URL.getInstance();
 
-        UserAPI userAPI = retrofit.create(UserAPI.class);
+
+        UserAPI userAPI = URL.getInstance().create(UserAPI.class);
 
         Call<UserResponse> call = userAPI.checkUser(edtUsername.getText().toString().trim(),edtPassword.getText().toString().trim());
 
