@@ -1,12 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/yellowlite"
     tools:context=".Activity.OrderItemActivity">
 
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ORDER FOOD"
+            android:textSize="40sp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorGreen1"
+            android:textAlignment="center"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected Food Item"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="50dp"
+            android:textSize="35sp"
+            android:layout_marginBottom="50dp"
+            android:background="@color/colorFade"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/selectFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:hint="Chosen Food name"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of food items to order"
+            android:layout_marginLeft="50dp"
+            android:textSize="23sp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/colorFade"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/selectQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="30dp"
+            android:hint="Number of food items"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/btnOrderitem"
+            android:text="ORDER"
+            android:drawableTop="@drawable/ic_baseline_reorder_24"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:textSize="40sp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:background="@color/colorGreen1"
+            />
 
 </LinearLayout>
+</ScrollView>

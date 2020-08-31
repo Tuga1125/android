@@ -1,4 +1,4 @@
-package com.example.onlinefoodorder.GoogleMap;
+package com.example.onlinefoodorder.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

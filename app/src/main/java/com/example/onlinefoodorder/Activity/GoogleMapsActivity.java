@@ -1,4 +1,4 @@
-package com.example.onlinefoodorder.GoogleMap;
+package com.example.onlinefoodorder.Activity;
 
 import androidx.fragment.app.FragmentActivity;
 
@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.onlinefoodorder.GoogleMap.LatitudeLongitude;
 import com.example.onlinefoodorder.R;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;

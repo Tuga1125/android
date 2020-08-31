@@ -56,7 +56,7 @@ public class FoodItemsActivity extends AppCompatActivity {
                             Toast.makeText(FoodItemsActivity.this, "Error code:"+response.code(), Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Toast.makeText(FoodItemsActivity.this, "Success: Food Item Added", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FoodItemsActivity.this, "Food Item is added successfuly!", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override

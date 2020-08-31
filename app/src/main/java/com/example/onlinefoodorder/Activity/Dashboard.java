@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.onlinefoodorder.GoogleMap.SearchActivity;
 import com.example.onlinefoodorder.R;
 
 public class   Dashboard extends AppCompatActivity {

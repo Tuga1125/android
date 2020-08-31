@@ -12,17 +12,18 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:src="@drawable/logo"/>
+        android:src="@drawable/ic_baseline_fastfood_24"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="67dp"
         android:layout_alignTop="@+id/logo"
-        android:layout_marginTop="25dp"
-        android:text="Food Delivery App"
+        android:layout_marginTop="10dp"
+        android:text="Online Food   Order"
+        android:fontFamily="sans-serif-black"
         android:textAlignment="center"
-        android:textColor="@color/colorPink"
-        android:textSize="50sp"
+        android:textColor="@color/colorFade"
+        android:textSize="40sp"
         android:textStyle="bold"/>
 
 

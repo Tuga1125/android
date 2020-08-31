@@ -23,10 +23,10 @@
 
         <TextView
             android:id="@+id/txtSearch"
-            android:text="Search Results"
+            android:text="Search Locations"
             android:textSize="20sp"
             android:textAlignment="center"
-            android:background="#024268"
+            android:background="@color/pinky"
             android:textColor="@color/yellowlite"
             android:fontFamily="sans-serif-black"
             android:layout_width="match_parent"

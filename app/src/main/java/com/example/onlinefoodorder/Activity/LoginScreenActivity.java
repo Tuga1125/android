@@ -101,7 +101,7 @@ public class LoginScreenActivity extends AppCompatActivity {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
                 .setSmallIcon(R.drawable.ic_baseline_message_24)
                 .setContentTitle("Login")
-                .setContentText("Congratulations! Login Successful").setCategory(NotificationCompat.CATEGORY_MESSAGE);
+                .setContentText("Congratulations! Login is Successful").setCategory(NotificationCompat.CATEGORY_MESSAGE);
 
         notificationManagerCompat.notify(1, builder.build());
 
@@ -110,7 +110,7 @@ public class LoginScreenActivity extends AppCompatActivity {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_2)
                 .setSmallIcon(R.drawable.ic_baseline_message_24)
                 .setContentTitle("Login")
-                .setContentText("Sorry! Login Unsuccessful").setCategory(NotificationCompat.CATEGORY_MESSAGE);
+                .setContentText("Sorry! Login is Unsuccessful").setCategory(NotificationCompat.CATEGORY_MESSAGE);
 
         notificationManagerCompat.notify(2, builder.build());
 
