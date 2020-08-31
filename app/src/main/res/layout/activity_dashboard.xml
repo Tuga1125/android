@@ -18,8 +18,20 @@
         android:layout_height="wrap_content"
         android:text="Welcome to Dashboard!"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/txtSearch"
+            android:text="Search Results"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:background="#024268"
+            android:textColor="@color/yellowlite"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
 
      <GridLayout
          android:layout_width="match_parent"
@@ -242,7 +254,7 @@
             android:layout_height="wrap_content"
             android:text="Add Food Items"
             android:textSize="20sp"
-            android:layout_margin="20dp"/>
+            android:layout_margin="10dp"/>
 
         <Button
             android:id="@+id/btnViewFooditems"
@@ -250,7 +262,10 @@
             android:layout_height="wrap_content"
             android:text="View Food Items"
             android:textSize="20sp"
-            android:layout_margin="20dp"/>
-</LinearLayout>
+            android:layout_margin="10dp"/>
+
+
+
+    </LinearLayout>
 
 </ScrollView>

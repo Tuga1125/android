@@ -6,11 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.onlinefoodorder.GoogleMap.SearchActivity;
 import com.example.onlinefoodorder.R;
 
 public class   Dashboard extends AppCompatActivity {
     Button btnAddFooditems, btnViewFooditems;
+    TextView txtSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,13 @@ public class   Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Dashboard.this, ViewFoodItemsActivity.class));
+            }
+        });
+
+        txtSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, SearchActivity.class));
             }
         });
     }
