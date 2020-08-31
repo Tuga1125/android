@@ -11,8 +11,10 @@
         android:id="@+id/MainbtnSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Search Map"
+        android:text="Search Maps"
         android:textSize="20sp"
         android:layout_margin="30dp"/>
+
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

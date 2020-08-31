@@ -12,7 +12,7 @@ import com.example.onlinefoodorder.R;
 
 public class   Dashboard extends AppCompatActivity {
     Button btnAddFooditems, btnViewFooditems;
-    TextView txtSearch;
+    Button BtnSEarch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class   Dashboard extends AppCompatActivity {
 
         btnAddFooditems = findViewById(R.id.btnAddFooditems);
         btnViewFooditems = findViewById(R.id.btnViewFooditems);
+        BtnSEarch = findViewById(R.id.BtnSEarch);
 
         btnAddFooditems.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,11 +37,11 @@ public class   Dashboard extends AppCompatActivity {
             }
         });
 
-        txtSearch.setOnClickListener(new View.OnClickListener() {
+        BtnSEarch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Dashboard.this, SearchActivity.class));
             }
         });
-    }
-}
+                }
+                }

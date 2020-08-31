@@ -1,11 +1,12 @@
-package com.example.onlinefoodorder.GoogleMap;
+package com.example.onlinefoodorder.GooglMaps;
 
-public class LatitudeLongitude {
+public class Lists {
+
     private double lat;
     private double lon;
     private String marker;
 
-    public LatitudeLongitude(double lat, double lon, String marker) {
+    public Lists(double lat, double lon, String marker) {
         this.lat = lat;
         this.lon = lon;
         this.marker = marker;

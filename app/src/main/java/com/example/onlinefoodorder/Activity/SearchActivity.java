@@ -22,7 +22,7 @@ public class SearchActivity extends AppCompatActivity {
         MainbtnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SearchActivity.this, GoogleMapsActivity.class));
+                startActivity(new Intent(SearchActivity.this, MapsActivity.class));
             }
         });
     }

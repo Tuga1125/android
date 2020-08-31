@@ -21,8 +21,8 @@
         android:textSize="30sp"
         android:layout_margin="20dp"/>
 
-        <TextView
-            android:id="@+id/txtSearch"
+        <Button
+            android:id="@+id/BtnSEarch"
             android:text="Search Locations"
             android:textSize="20sp"
             android:textAlignment="center"
