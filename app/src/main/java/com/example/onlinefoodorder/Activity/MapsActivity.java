@@ -51,7 +51,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!TextUtils.isEmpty(acView.getText().toString())){
+                if(TextUtils.isEmpty(acView.getText().toString())){
                     acView.setError("Please enter the Location");
                     return;
                 }
@@ -80,6 +80,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
     private void setListandAdapter(){
@@ -99,29 +103,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
     private  int search(String name){
-        for (int i=0; i<list.size();i++){
-            if(list.get(i).getMarker().contains(name)){
+        for (int i = 0; i < list.size(); i++){
+            if(list.get(i).getMarker().contains(name)) {
                 return i;
             }
         }
         return  -1;
     }
 
-    private void loadMap(int position){
+    private void loadMap(int position) {
 
-        if(marker!= null){
+        if(marker != null){
             marker.remove();
         }
 
         double latitude = list.get(position).getLat();
         double longitude = list.get(position).getLon();
         center = CameraUpdateFactory.newLatLng(new LatLng(latitude, longitude));
-        zoom = CameraUpdateFactory.zoomTo(10);
+        zoom = CameraUpdateFactory.zoomTo(17);
 
         marker = mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title(list.get(position).getMarker()));
 
-        mMap.animateCamera(center);
         mMap.moveCamera(center);
+        mMap.animateCamera(center);
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
     }

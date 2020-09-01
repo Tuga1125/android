@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.onlinefoodorder" >
-
+    package="com.example.onlinefoodorder">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -17,8 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true" >
-
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Sensors.ProximitySensor_Add"></activity>
+        <activity android:name=".Sensors.GyroscopeSensor" />
+        <activity android:name=".Sensors.AccelerometerSensor" />
+        <activity android:name=".Sensors.SensorList" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,7 +43,7 @@
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Activity.Dashboard" />
         <activity android:name=".Activity.LoginScreenActivity" />
-        <activity android:name=".SplashScreenActivity" >
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

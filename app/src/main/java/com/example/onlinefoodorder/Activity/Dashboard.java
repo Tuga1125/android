@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.onlinefoodorder.R;
 
 public class   Dashboard extends AppCompatActivity {
+    TextView txtFood;
     Button btnAddFooditems, btnViewFooditems;
     Button BtnSEarch;
 
@@ -19,9 +20,17 @@ public class   Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        txtFood = findViewById(R.id.txtFood);
         btnAddFooditems = findViewById(R.id.btnAddFooditems);
         btnViewFooditems = findViewById(R.id.btnViewFooditems);
         BtnSEarch = findViewById(R.id.BtnSEarch);
+
+        txtFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, OrderItemActivity.class));
+            }
+        });
 
         btnAddFooditems.setOnClickListener(new View.OnClickListener() {
             @Override
