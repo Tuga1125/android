@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.onlinefoodorder.R;
+import com.google.android.gms.maps.model.Dash;
 
 public class   Dashboard extends AppCompatActivity {
     TextView txtFood;
@@ -16,7 +17,7 @@ public class   Dashboard extends AppCompatActivity {
     Button BtnSEarch;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
@@ -50,6 +51,13 @@ public class   Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Dashboard.this, SearchActivity.class));
+            }
+        });
+
+        txtFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, OrderItemActivity.class));
             }
         });
                 }

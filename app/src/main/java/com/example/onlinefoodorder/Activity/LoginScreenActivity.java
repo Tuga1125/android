@@ -85,7 +85,7 @@ public class LoginScreenActivity extends AppCompatActivity {
                 }
 
                 URL.token+=response.body().getToken();
-                startActivity(new Intent(LoginScreenActivity.this, Dashboard.class));
+                startActivity(new Intent(LoginScreenActivity.this, navbar.class));
                 displayNotificationSuccess();
             }
 
