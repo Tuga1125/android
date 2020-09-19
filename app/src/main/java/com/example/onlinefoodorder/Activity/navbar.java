@@ -37,7 +37,7 @@ import java.util.ArrayList;
 public class navbar extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static NavigationView navigationView;
-    TextView txtFood;
+    TextView txtFood, tvNext;
     Button btnAddFooditems, btnViewFooditems;
     Button BtnSEarch;
     DrawerLayout drawer;
@@ -76,6 +76,15 @@ public class navbar extends AppCompatActivity implements NavigationView.OnNaviga
             }
         });
 
+        tvNext = findViewById(R.id.tvNext);
+
+        tvNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(navbar.this, SearchActivity.class));
+            }
+        });
+
         btnAddFooditems = findViewById(R.id.btnAddFooditems);
 
         btnAddFooditems.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +111,8 @@ public class navbar extends AppCompatActivity implements NavigationView.OnNaviga
                 startActivity(new Intent(navbar.this, SearchActivity.class));
             }
         });
+
+
 
 //        btnProx.findViewById(R.id.btnProx);
 //

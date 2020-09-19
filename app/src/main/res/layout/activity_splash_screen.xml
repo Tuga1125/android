@@ -19,6 +19,7 @@
         android:layout_height="67dp"
         android:layout_alignTop="@+id/logo"
         android:layout_marginTop="10dp"
+        android:padding="10dp"
         android:text="Online Food   Order"
         android:fontFamily="sans-serif-black"
         android:textAlignment="center"

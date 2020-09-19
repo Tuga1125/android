@@ -2,7 +2,13 @@ package com.example.onlinefoodorder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static String token = "";
@@ -21,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         MainActivity.email = "";
         MainActivity.password = "";
     }
-
 
 
     @Override

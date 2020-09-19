@@ -17,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.EditFoodItemActivity"></activity>
+        <activity android:name=".UserActivity"></activity>
+        <activity android:name=".MActivity" />
+        <activity android:name=".Activity.EditFoodItemActivity" />
         <activity
             android:name=".Activity.navbar"
             android:label="@string/title_activity_navbar"

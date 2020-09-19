@@ -2,6 +2,7 @@ package com.example.onlinefoodorder.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -58,7 +59,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 if (!response.isSuccessful()) {
                     Toast.makeText(RegisterActivity.this,"code"+response.code(), Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(RegisterActivity.this, "Register Successfull", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "User Registered Successfully!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(RegisterActivity.this, LoginScreenActivity.class));
             }
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {

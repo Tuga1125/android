@@ -1,7 +1,10 @@
 package com.example.onlinefoodorder.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.onlinefoodorder.API.ItemAPI;
+import com.example.onlinefoodorder.Channel.CreateChannel;
 import com.example.onlinefoodorder.R;
 import com.example.onlinefoodorder.URL.URL;
 
@@ -25,11 +29,18 @@ public class FoodItemsActivity extends AppCompatActivity {
     EditText etFood, etDesc, etQuantity, etPrice;
     Button btnAdd, btnEdit;
 
+    private NotificationManagerCompat notificationManagerCompat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R
                 .layout.activity_food_items);
+
+
+        notificationManagerCompat = NotificationManagerCompat.from(this);
+        CreateChannel createChannel = new CreateChannel(this);
+        createChannel.createChannel();
 
         etFood = findViewById(R.id.etFood);
         etDesc = findViewById(R.id.edtDesc);
@@ -57,13 +68,14 @@ public class FoodItemsActivity extends AppCompatActivity {
                             Toast.makeText(FoodItemsActivity.this, "Error code:"+response.code(), Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Toast.makeText(FoodItemsActivity.this, "Food Item is added successfuly!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FoodItemsActivity.this, "", Toast.LENGTH_SHORT).show();
+                        DisplayNotification();
                     }
 
                     @Override
                     public void onFailure(Call<Void> call, Throwable t) {
                         Toast.makeText(FoodItemsActivity.this, "Error message"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-
+                        DisplayNotification2();
                     }
                 });
                 btnEdit.setOnClickListener(new View.OnClickListener() {
@@ -78,4 +90,26 @@ public class FoodItemsActivity extends AppCompatActivity {
         });
 
     }
+    private void DisplayNotification() {
+        Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle("Updates")
+                .setContentText("Congratulations ! Your fooditem is added successfully!")
+                .setCategory(NotificationCompat.CATEGORY_SYSTEM)
+                .build();
+
+        notificationManagerCompat.notify(1, notification);
+    }
+    //activity changes
+
+    private void DisplayNotification2() {
+        Notification notification=new NotificationCompat.Builder(this,CreateChannel.CHANNEL_2)
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle("My E-Foodie")
+                .setContentText("You have been connected to a network")
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        notificationManagerCompat.notify(2,notification);
+    }
+
 }

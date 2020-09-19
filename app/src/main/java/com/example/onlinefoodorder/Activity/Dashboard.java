@@ -12,7 +12,7 @@ import com.example.onlinefoodorder.R;
 import com.google.android.gms.maps.model.Dash;
 
 public class   Dashboard extends AppCompatActivity {
-    TextView txtFood;
+    TextView txtFood, txtNext;
     Button btnAddFooditems, btnViewFooditems;
     Button BtnSEarch;
 
@@ -25,6 +25,7 @@ public class   Dashboard extends AppCompatActivity {
         btnAddFooditems = findViewById(R.id.btnAddFooditems);
         btnViewFooditems = findViewById(R.id.btnViewFooditems);
         BtnSEarch = findViewById(R.id.BtnSEarch);
+        txtNext = findViewById(R.id.tvNext);
 
         txtFood.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +51,7 @@ public class   Dashboard extends AppCompatActivity {
         BtnSEarch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Dashboard.this, SearchActivity.class));
+                startActivity(new Intent(Dashboard.this, MapsActivity.class));
             }
         });
 
@@ -58,6 +59,13 @@ public class   Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Dashboard.this, OrderItemActivity.class));
+            }
+        });
+
+        txtNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, SearchActivity.class));
             }
         });
                 }
