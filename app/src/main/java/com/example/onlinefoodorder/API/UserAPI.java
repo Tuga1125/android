@@ -8,6 +8,7 @@ import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface UserAPI {
 
@@ -21,5 +22,7 @@ public interface UserAPI {
             @Field("username") String username,
             @Field("password") String password
     );
-
+//
+//    @FormUrlEncoded
+//    @PUT("api/users/{userid}")
 }

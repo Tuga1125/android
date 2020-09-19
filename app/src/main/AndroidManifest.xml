@@ -17,10 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.EditFoodItemActivity"></activity>
         <activity
             android:name=".Activity.navbar"
             android:label="@string/title_activity_navbar"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Sensors.ProximitySensor_Add" />
         <activity android:name=".Sensors.GyroscopeSensor" />
         <activity android:name=".Sensors.AccelerometerSensor" />

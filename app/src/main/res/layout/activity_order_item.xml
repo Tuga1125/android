@@ -67,6 +67,7 @@
             android:gravity="center"/>
 
         <TextView
+            android:id="@+id/txtDate"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginBottom="10dp"
@@ -77,15 +78,15 @@
             android:layout_height="wrap_content"
             android:text="Pick the date"/>
 
-        <DatePicker
-            android:id="@+id/showDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:datePickerMode="spinner"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginBottom="5dp"
-            android:calendarViewShown="false"/>
+<!--        <DatePicker-->
+<!--            android:id="@+id/showDate"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:datePickerMode="spinner"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:layout_marginRight="50dp"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:calendarViewShown="false"/>-->
 
         <Button
             android:id="@+id/btnOrderitem"

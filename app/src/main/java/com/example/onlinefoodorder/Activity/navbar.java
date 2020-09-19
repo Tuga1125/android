@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.onlinefoodorder.Channel.CreateChannel;
 import com.example.onlinefoodorder.MainActivity;
 import com.example.onlinefoodorder.R;
+import com.example.onlinefoodorder.Sensors.ProximitySensor_Add;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
@@ -101,6 +102,16 @@ public class navbar extends AppCompatActivity implements NavigationView.OnNaviga
                 startActivity(new Intent(navbar.this, SearchActivity.class));
             }
         });
+
+//        btnProx.findViewById(R.id.btnProx);
+//
+//        btnProx.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(navbar.this, ProximitySensor_Add.class));
+//            }
+//        });
+
 
 
     }
