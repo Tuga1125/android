@@ -69,13 +69,13 @@ public class FoodItemsActivity extends AppCompatActivity {
                             return;
                         }
                         Toast.makeText(FoodItemsActivity.this, "", Toast.LENGTH_SHORT).show();
-                        DisplayNotification();
+                        DisplayNotificationSuccess();
                     }
 
                     @Override
                     public void onFailure(Call<Void> call, Throwable t) {
                         Toast.makeText(FoodItemsActivity.this, "Error message"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                        DisplayNotification2();
+                        DisplayNotificationError();
                     }
                 });
                 btnEdit.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +90,7 @@ public class FoodItemsActivity extends AppCompatActivity {
         });
 
     }
-    private void DisplayNotification() {
+    private void DisplayNotificationSuccess() {
         Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
                 .setSmallIcon(R.drawable.logo)
                 .setContentTitle("Updates")
@@ -102,7 +102,7 @@ public class FoodItemsActivity extends AppCompatActivity {
     }
     //activity changes
 
-    private void DisplayNotification2() {
+    private void DisplayNotificationError() {
         Notification notification=new NotificationCompat.Builder(this,CreateChannel.CHANNEL_2)
                 .setSmallIcon(R.drawable.logo)
                 .setContentTitle("My E-Foodie")

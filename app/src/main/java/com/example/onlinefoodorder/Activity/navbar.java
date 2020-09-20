@@ -37,7 +37,7 @@ import java.util.ArrayList;
 public class navbar extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static NavigationView navigationView;
-    TextView txtFood, tvNext;
+    TextView txtFood, tvNext, navUser, navEmail;
     Button btnAddFooditems, btnViewFooditems;
     Button BtnSEarch;
     DrawerLayout drawer;
@@ -122,6 +122,7 @@ public class navbar extends AppCompatActivity implements NavigationView.OnNaviga
 //                startActivity(new Intent(navbar.this, ProximitySensor_Add.class));
 //            }
 //        });
+        inflateHeader();
 
 
 
@@ -141,6 +142,18 @@ public class navbar extends AppCompatActivity implements NavigationView.OnNaviga
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private View header;
+    private void inflateHeader(){
+        header = navigationView.getHeaderView(0);
+        navUser  = header.findViewById(R.id.navUser);
+        navEmail  = header.findViewById(R.id.navEmail);
+
+        navUser.setText(MainActivity.username + " ("+ MainActivity.loggedInUserType+") ");
+        navEmail.setText(MainActivity.email);
+//        Global.alert(getApplicationContext(),Global.loggedInUserId);
     }
 
 

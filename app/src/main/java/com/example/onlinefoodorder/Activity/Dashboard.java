@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.onlinefoodorder.R;
-import com.google.android.gms.maps.model.Dash;
 
 public class   Dashboard extends AppCompatActivity {
     TextView txtFood, txtNext;

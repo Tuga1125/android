@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.MessageQueue;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -19,6 +20,16 @@ public class MainActivity extends AppCompatActivity {
     public static String password= "";
     public static String loggedInUserType = "user";
 
+
+    public static void login(String token, String userid, String username, String email, String password){
+        MainActivity.token = token;
+        MainActivity.loginstatus = true;
+        MainActivity.loggedinuserId = userid;
+        MainActivity.username = username;
+        MainActivity.email = email;
+        MainActivity.password = password;
+
+    }
     public static void logout() {
         MainActivity.token = "";
         MainActivity.loggedinuserId = "";

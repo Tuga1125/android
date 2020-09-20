@@ -1,6 +1,8 @@
 package com.example.onlinefoodorder.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.onlinefoodorder.API.UserAPI;
+import com.example.onlinefoodorder.Channel.CreateChannel;
 import com.example.onlinefoodorder.Model.User;
 import com.example.onlinefoodorder.R;
 import com.example.onlinefoodorder.Response.UserResponse;
@@ -26,11 +29,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     EditText edtFirstName, edtLastName, edtUsername, edtEmail, edtPassword;
     Button btnRegister;
+    NotificationManagerCompat notificationManagerCompat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        notificationManagerCompat = NotificationManagerCompat.from(this);
+        CreateChannel createChannel = new CreateChannel(this);
+        createChannel.createChannel();
 
         edtFirstName = findViewById(R.id.edtFirstName);
         edtLastName = findViewById(R.id.edtLastName);
@@ -61,10 +69,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 }
                 Toast.makeText(RegisterActivity.this, "User Registered Successfully!", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(RegisterActivity.this, LoginScreenActivity.class));
+                displayNotificationSuccess();
             }
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
                 Toast.makeText(RegisterActivity.this, "Error"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                displayNotificationUnSuccess();
             }
         });
 
@@ -78,5 +88,27 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
     }
+
+
+    private void displayNotificationSuccess() {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
+                .setSmallIcon(R.drawable.ic_baseline_message_24)
+                .setContentTitle("Login")
+                .setContentText("Congratulations! You are registered successfully").setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+        notificationManagerCompat.notify(1, builder.build());
+
+    }
+
+    private void displayNotificationUnSuccess() {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_2)
+                .setSmallIcon(R.drawable.ic_baseline_message_24)
+                .setContentTitle("Login")
+                .setContentText("Sorry! Registration is Unsuccessful").setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+        notificationManagerCompat.notify(2, builder.build());
+
+    }
+
 }
 
